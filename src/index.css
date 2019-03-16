@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -18,29 +18,29 @@ code {
     monospace;
 }
 
-.greeting{
+.greeting {
   font-size: 60px;
 }
 
-.name{
+.name {
   font-size: 40px;
 }
 
-.job{
+.job {
   font-size: 30px;
 }
 
-.more{
+.more {
   text-decoration-line: none !important;
   font-weight: bold;
   font-style: oblique;
 }
 
-.more:hover{
+.more:hover {
   background-color: rgb(141, 61, 61) !important;
 }
 
-.contentArea{
+.contentArea {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,13 +49,17 @@ code {
 .left {
   width: 50%;
   float: left;
+  display: flex;
+  justify-content: center;
 }
 
-.LRWrapper{
+.LRWrapper {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .right {
@@ -63,66 +67,139 @@ code {
   float: right;
 }
 
-.right p{
+.right p {
   font-size: 22px;
 }
 
-.picture{
+.picture {
   height: 400px;
-  max-width: 430px;
+  max-width: 410px;
   width: 100%;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.picture img{
+.picture img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.about::-webkit-scrollbar { 
+.about::-webkit-scrollbar {
   display: none;
 }
 
-.right a{
+.right a {
   text-transform: capitalize;
   font-size: 18px;
   text-decoration: none;
 }
 
-.navSection{
+.navSection {
   width: 100%;
 }
 
-.contact{
+.contact {
   max-width: 500px;
   width: 100%;
   margin: 0 auto;
   padding: 3% 0;
 }
 
-.materialize-textarea{
+.materialize-textarea {
   height: 120px !important;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: rgb(13, 179, 179);
 }
 
-.contact p{
-  color:  rgb(27, 216, 216);
+.contact p {
+  color: rgb(27, 216, 216);
   font-size: 20px;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 20px;
 }
 
-.nav-item{
+.nav-item {
   font-size: 18px;
 }
 
-.social a{
+.social a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 850px) {
+  .LRWrapper {
+    width: 100%;
+    max-width: unset;
+    margin: unset;
+    height: 1000px;
+    display: block;
+    align-items: unset;
+    position: relative;
+    top: 50px;
+    padding: 100px 0;
+  }
+
+  .left {
+    width: 100%;
+    float: none;
+  }
+
+  .right {
+    width: 96%;
+    float: none;
+    margin: 50px 2% 100px 2%;
+  }
+
+  .navSection {
+    position: relative;
+    top: 50px;
+    padding: 70px 0 0 0;
+  }
+
+  .contact {
+    padding: 0 0 5% 0;
+  }
+
+  .page-footer {
+    position: relative;
+    top: 50px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .contact {
+    max-width: unset;
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .LRWrapper {
+    height: 1100px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .picture {
+    height: auto;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .picture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .LRWrapper {
+    height: 1300px;
+  }
 }

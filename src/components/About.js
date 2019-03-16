@@ -4,7 +4,7 @@ import about from "../images/about4.jpg";
 import Navbar from "./Navbar";
 import FormInput from "./Form";
 import Footer from "./Footer";
-import { rollIn } from "react-animations";
+import { lightSpeedIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 
 const About = () => {
@@ -18,19 +18,19 @@ const About = () => {
   };
 
   const styles = {
-    rollIn: {
+    lightSpeedIn: {
       animation: "x 2s",
-      animationName: Radium.keyframes(rollIn, "rollIn")
+      animationName: Radium.keyframes(lightSpeedIn, "lightSpeedIn")
     }
   };
 
   return (
     <StyleRoot>
-      <div className="test" style={styles.rollIn}>
+      <div className="test" style={styles.lightSpeedIn}>
         <div className="about" style={myStyle}>
           <Navbar />
-          <div className="LRWrapper d-flex align-items-center" id="about">
-            <div className="left d-flex justify-content-center">
+          <div className="LRWrapper" id="about">
+            <div className="left">
               <div className="picture z-depth-5">
                 <img src={me} alt="display" />
               </div>
