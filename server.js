@@ -5,10 +5,13 @@ const port = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb+srv://orpcy:sophew@cluster0-35d4g.mongodb.net/test?retryWrites=true", {useNewUrlParser: true})
+mongoose.connect(process.env.Db_url, {useNewUrlParser: true})
 .then(success => console.log("Db connected successfully!"))
 .catch(error => console.log("Error connecting to database...", error));
 
