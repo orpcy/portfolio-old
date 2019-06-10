@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import me from "../images/me.jpg";
 import about from "../images/about4.jpg";
 import Navbar from "./Navbar";
@@ -9,6 +9,13 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 class About extends Component {
+  constructor(props) {
+    super(props);
+    // create a ref to store the textInput DOM element
+    this.contact = React.createRef();
+    this.about = React.createRef();
+  }
+
   state = {
     details: {
       name: "",
@@ -41,15 +48,28 @@ class About extends Component {
       .then(res => res.json())
       .then(res => {
         if (res.email) {
-          toast.info(
-            "Message sent successfully, we will be in touch soon:)"
-          );
+          toast.info("Message sent successfully, we will be in touch soon:)");
           setTimeout(() => {
             window.location = "/about";
           }, 5000);
         }
       })
       .catch(err => console.log("error sending message", err));
+  };
+
+  handleScroll = () => {
+    this.about.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      duration: "5000"
+    });
+  };
+
+  handleScroll2 = () => {
+    this.contact.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
   render() {
@@ -76,7 +96,7 @@ class About extends Component {
         <div className="test" style={styles.lightSpeedIn}>
           <div className="about" style={myStyle}>
             <Navbar />
-            <div className="LRWrapper" id="about">
+            <div className="LRWrapper" ref={this.about}>
               <div className="left">
                 <div className="picture z-depth-5">
                   <img src={me} alt="display" />
@@ -96,14 +116,14 @@ class About extends Component {
                   </p>
                   <a
                     class="btn waves-effect pulse waves-light pt-1 text-white"
-                    href="#navSection"
+                    onClick={this.handleScroll2}
                   >
                     Contact <i className="fas fa-arrow-circle-down" />
                   </a>
                 </div>
               </div>
             </div>
-            <div className="navSection" id="navSection">
+            <div className="navSection" ref={this.contact}>
               <div className="contact">
                 <h1 className="text-white text-center mb-4">Contact</h1>
                 <p className="text-center font-weight-bold">
@@ -162,7 +182,7 @@ class About extends Component {
               <p className="text-center mb-0">
                 <a
                   class="btn-floating btn-large waves-effect pulse waves-light teal z-depth-5"
-                  href="#about"
+                  onClick={this.handleScroll}
                 >
                   <i class="fas fa-angle-double-up" />
                 </a>
