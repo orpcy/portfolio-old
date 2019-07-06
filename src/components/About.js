@@ -1,4 +1,4 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import me from "../images/me.jpg";
 import about from "../images/about4.jpg";
 import Navbar from "./Navbar";
@@ -48,13 +48,28 @@ class About extends Component {
       .then(res => res.json())
       .then(res => {
         if (res.email) {
-          toast.info("Message sent successfully, we will be in touch soon:)");
-          setTimeout(() => {
-            window.location = "/about";
-          }, 5000);
+          const options = {
+            autoClose: 4000,
+            hideProgressBar: true
+          };
+          toast.info(
+            "Message sent successfully, we will be in touch soon:)",
+            options
+          );
         }
       })
-      .catch(err => console.log("error sending message", err));
+      .catch(err => {
+        toast.error("error sending message");
+        console.log("error sending message", err);
+      });
+
+    this.setState({
+      details: {
+        name: "",
+        email: "",
+        message: ""
+      }
+    });
   };
 
   handleScroll = () => {

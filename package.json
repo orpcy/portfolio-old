@@ -18,7 +18,8 @@
     "react-toastify": "^5.0.1"
   },
   "scripts": {
-    "start-dev": "react-scripts build && node server.js",
+    "build-dev": "react-scripts build && node server.js",
+    "start-dev": "react-scripts start",
     "heroku-postbuild": "rm -rf ./build && react-scripts build",
     "start": "node server.js",
     "build": "react-scripts build",

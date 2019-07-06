@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <ToastContainer />
+        <ToastContainer position="bottom-left" />
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/about" component={About} />
