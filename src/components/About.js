@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { lightSpeedIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 class About extends Component {
@@ -129,12 +130,13 @@ class About extends Component {
                     understand what is expected of me, prioritize my tasks and
                     keep an open line of communication with the clients.
                   </p>
-                  <a
+                  <Link
                     class="btn waves-effect pulse waves-light pt-1 text-white"
                     onClick={this.handleScroll2}
+                    to="#"
                   >
                     Contact <i className="fas fa-arrow-circle-down" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -195,12 +197,13 @@ class About extends Component {
                 </div>
               </div>
               <p className="text-center mb-0">
-                <a
+                <Link
                   class="btn-floating btn-large waves-effect pulse waves-light teal z-depth-5"
                   onClick={this.handleScroll}
+                  to="#"
                 >
                   <i class="fas fa-angle-double-up" />
-                </a>
+                </Link>
               </p>
             </div>
             <Footer />

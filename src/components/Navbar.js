@@ -3,7 +3,7 @@ import {Link, NavLink} from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-dark border-bottom border-info">
+    <nav className="navbar fixed-top navbar-expand-sm navbar-light bg-dark border-bottom border-info">
       <Link className="navbar-brand #00bfa5 teal-text text-accent-1 font-weight-bold" to="/">
         ORPCY
       </Link>
