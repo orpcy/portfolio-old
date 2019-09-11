@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import me from "../images/me.jpg";
 import about from "../images/about4.jpg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -115,7 +114,7 @@ class About extends Component {
             <div className="LRWrapper" ref={this.about}>
               <div className="left">
                 <div className="picture z-depth-5">
-                  <img src={me} alt="display" />
+                  <img src="https://cdn.mos.cms.futurecdn.net/EzgdmaCQuT84bgDL4fhXZS.jpg" alt="display" />
                 </div>
               </div>
               <div className="right text-center">

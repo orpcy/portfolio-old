@@ -30,7 +30,7 @@ const msgSchema = mongoose.Schema({
 const Message = mongoose.model("Message", msgSchema);
 
 app.post("/api/message", (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, re } = req.body;
   Message.create({name, email, message}, (err, data) => {
     if(err) res.send(err);
     res.send(data);
@@ -42,7 +42,7 @@ app.use(favicon(__dirname + "/build/favicon.ico"));
 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "build")));
-app.get("/ping", function(req, res) {
+app.get("/.", function(req, res) {
   return res.send("pong");
 });
 app.get("/*", function(req, res) {
