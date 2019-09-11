@@ -121,7 +121,7 @@ class About extends Component {
                 <div className="bg-dark text-white w-100 pt-3 pb-3 z-depth-5">
                   <h2>Who's this guy?</h2>
                   <p className="ml-4 mr-4">
-                    I'm Olamilekan Jamiu. I'm a passionate full-stack developer.
+                    I'm Sofiyullah Jamiu. I'm a passionate full-stack developer.
                     I'm proficient in developing back-end apps and also have
                     proficiency in building/designing fully responsive and
                     highly mobile friendly website. In balancing demanding
